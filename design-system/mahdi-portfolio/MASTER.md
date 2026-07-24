@@ -32,6 +32,18 @@
 
 **Color Notes:** Professional navy + section accent + success green
 
+**Dark mode overrides** (`prefers-color-scheme: dark`) — navy secondary/ring fail contrast against the dark background (~3.5:1 / ~1.6:1 respectively), so both are lightened:
+
+| Role | Light | Dark | CSS Variable |
+|------|-------|------|--------------|
+| Background | `#F8FAFC` | `#0F172A` | `--color-background` |
+| Foreground | `#0F172A` | `#F8FAFC` | `--color-foreground` |
+| Muted | `#E9EEF5` | `#1B2336` | `--color-muted` |
+| Muted Foreground | `#64748B` | `#94A3B8` | `--color-muted-foreground` |
+| Border | `#CBD5E1` | `#334155` | `--color-border` |
+| Secondary | `#2563EB` | `#60A5FA` | `--color-secondary` |
+| Ring | `#1E3A5F` | `#60A5FA` | `--color-ring` |
+
 ### Typography
 
 - **Heading Font:** Inter
@@ -73,11 +85,13 @@
 
 ### Buttons
 
+**Corrected from the tool's default:** the generator's first pass put the accent green (`#16A34A`) behind white text, which computes to ~3.3:1 contrast — below WCAG AA's 4.5:1 minimum for normal text. Use primary navy instead, which passes at ~11.5:1 and also puts the palette's namesake color somewhere visible on the page (it was otherwise unused). Accent green stays reserved for status/success indicators (e.g. the `/vitals` page), not CTA buttons.
+
 ```css
 /* Primary Button */
 .btn-primary {
-  background: #16A34A;
-  color: white;
+  background: #1E3A5F; /* --color-primary, not --color-accent */
+  color: #FFFFFF; /* --color-on-primary */
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 600;

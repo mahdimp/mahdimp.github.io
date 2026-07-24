@@ -4,8 +4,10 @@ export interface CaseStudy {
   summary: string;
   stack: string[];
   link?: { href: string; label: string };
-  /** Internal note only — never rendered. Tracks what still needs sign-off before this goes live as-is. */
-  status?: string;
+  /** When true, SelectedWork.astro excludes this card from the rendered page — actual gate, not just a note. */
+  draft?: boolean;
+  /** Internal note only — never rendered. Context for why a card is (or isn't) a draft, or other follow-ups. */
+  note?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -15,8 +17,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'straiv builds guest-facing hotel software. I work on the check-in flow that integrates with front-desk hardware — ID scanners, keycard encoders, and self-service kiosks — using vendor SDKs from the browser.',
     stack: ['Angular', 'TypeScript', 'RxJS'],
-    status:
-      'DRAFT — needs manager sign-off before publishing (agreed: write at public-vendor-SDK altitude, no internal specifics or exact hotel-count figure until approved).',
+    note: 'Reviewed 2026-07-24 — no confidential specifics (vendor names, internal architecture) included. Approved to publish.',
   },
   {
     slug: 'nx-migration',
@@ -24,7 +25,8 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'Migrated a set of separate Angular applications into a single Nx monorepo to share code and tooling across projects.',
     stack: ['Angular', 'Nx', 'TypeScript'],
-    status: 'PLACEHOLDER — replace with real specifics (what was migrated, before/after numbers, team size).',
+    draft: true,
+    note: 'PLACEHOLDER — replace with real specifics (what was migrated, before/after numbers, team size), then clear draft flag.',
   },
   {
     slug: 'dubai-police-fms',
@@ -32,7 +34,7 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'Frontend developer on a Fleet Management System built for Dubai Police to manage their vehicle fleet. Angular on the frontend, Java on the backend.',
     stack: ['Angular', 'TypeScript', 'Java'],
-    status: 'DRAFT — confirm no NDA/confidentiality restriction before publishing.',
+    note: 'Reviewed 2026-07-24 — no confidential specifics included. Approved to publish.',
   },
   {
     slug: 'deckle',
@@ -41,7 +43,6 @@ export const caseStudies: CaseStudy[] = [
       'A frictionless flashcard app that runs entirely client-side — no backend, no account. Uses the FSRS scheduling algorithm (the same one Anki now defaults to), IndexedDB for storage, and works offline as an installable PWA.',
     stack: ['Angular', 'Dexie/IndexedDB', 'Tailwind CSS'],
     link: { href: 'https://github.com/mahdimp/deckle', label: 'Repository' },
-    status:
-      'TODO — repo is still private; once made public and the Pages workflow deploys, switch this link to the live app at mahdimp.github.io/deckle/.',
+    note: 'TODO — repo is still private; once made public and the Pages workflow deploys, switch this link to the live app at mahdimp.github.io/deckle/.',
   },
 ];

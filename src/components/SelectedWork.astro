@@ -1,12 +1,14 @@
 ---
 import { caseStudies } from '../data/work';
+
+const publishedWork = caseStudies.filter((project) => !project.draft);
 ---
 
 <section id="work" class="work container">
   <h2>Selected work</h2>
   <div class="grid">
     {
-      caseStudies.map((project) => (
+      publishedWork.map((project) => (
         <article class="card">
           <h3>{project.title}</h3>
           <p>{project.summary}</p>
