@@ -12,29 +12,28 @@ export interface CaseStudy {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: 'straiv-hardware',
-    title: 'Front-desk hardware integration at straiv',
+    slug: 'straiv-checkin',
+    title: 'Guest check-in & kiosk applications at straiv',
     summary:
-      'straiv builds guest-facing hotel software. I work on the check-in flow that integrates with front-desk hardware — ID scanners, keycard encoders, and self-service kiosks — using vendor SDKs from the browser.',
+      'Built the guest-facing check-in and kiosk applications for straiv’s hotel platform — document capture, payment, keycard issuing, and mobile room access — so guests can complete check-in without queueing at reception.',
     stack: ['Angular', 'TypeScript', 'RxJS'],
-    note: 'Reviewed 2026-07-24 — no confidential specifics (vendor names, internal architecture) included. Approved to publish.',
+    note: 'Reviewed 2026-07-24, aligned with the corrected CV wording (feature-level, no hardware/vendor-SDK claims). Approved to publish.',
   },
   {
     slug: 'nx-migration',
     title: 'Nx monorepo migration',
     summary:
-      'Migrated a set of separate Angular applications into a single Nx monorepo to share code and tooling across projects.',
+      'Migrated a large Angular codebase into an Nx monorepo and extracted the kiosk application into its own buildable app, which shortened build and CI times and let the kiosk ship independently of the main product.',
     stack: ['Angular', 'Nx', 'TypeScript'],
-    draft: true,
-    note: 'PLACEHOLDER — replace with real specifics (what was migrated, before/after numbers, team size), then clear draft flag.',
+    note: 'Real specifics added 2026-07-24 from the CV; draft flag cleared.',
   },
   {
-    slug: 'dubai-police-fms',
-    title: 'Fleet Management System — Dubai Police',
+    slug: 'dubai-police-systems',
+    title: 'Insurance & Fleet Management Systems — Dubai Police',
     summary:
-      'Frontend developer on a Fleet Management System built for Dubai Police to manage their vehicle fleet. Angular on the frontend, Java on the backend.',
-    stack: ['Angular', 'TypeScript', 'Java'],
-    note: 'Reviewed 2026-07-24 — no confidential specifics included. Approved to publish.',
+      'At JointScope Technologies, rebuilt a legacy Insurance Management System against a new API and revised requirements, and set up the project architecture, shared design system, and state management (NgRx) for a Fleet Management System, both for Dubai Police.',
+    stack: ['Angular', 'TypeScript', 'NgRx'],
+    note: 'Reviewed 2026-07-24 against the CV — no confidential specifics included. Approved to publish. (Dropped "Java backend" tag from the earlier draft — not corroborated by the CV.)',
   },
   {
     slug: 'deckle',
