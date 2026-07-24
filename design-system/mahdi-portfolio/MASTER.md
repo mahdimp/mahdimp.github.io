@@ -23,6 +23,7 @@
 | On Primary | `#FFFFFF` | `--color-on-primary` |
 | Secondary | `#2563EB` | `--color-secondary` |
 | Accent/CTA | `#16A34A` | `--color-accent` |
+| Accent (text-safe) | `#15803D` (light) / `#4ADE80` (dark) | `--color-accent-text` |
 | Background | `#F8FAFC` | `--color-background` |
 | Foreground | `#0F172A` | `--color-foreground` |
 | Muted | `#E9EEF5` | `--color-muted` |
@@ -31,6 +32,8 @@
 | Ring | `#1E3A5F` | `--color-ring` |
 
 **Color Notes:** Professional navy + section accent + success green
+
+**Why `--color-accent-text` exists:** the raw `--color-accent` (`#16A34A`) is only ~3.1:1 against the light background — fine for a filled shape (button background, a dot) but fails WCAG AA (4.5:1) as text. `--color-accent-text` is a darker green (~4.79:1 light, ~10.25:1 dark via the lightened dark-mode value) reserved for anywhere accent green is used *as text*, e.g. the `.kicker` labels ("01 / NOW", etc.) that give each section a small numbered rhythm.
 
 **Dark mode overrides** (`prefers-color-scheme: dark`) — navy secondary/ring fail contrast against the dark background (~3.5:1 / ~1.6:1 respectively), so both are lightened:
 
