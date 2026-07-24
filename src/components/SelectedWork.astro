@@ -5,6 +5,7 @@ const publishedWork = caseStudies.filter((project) => !project.draft);
 ---
 
 <section id="work" class="work container">
+  <span class="kicker">02 / SELECTED WORK</span>
   <h2>Selected work</h2>
   <div class="grid">
     {
@@ -18,8 +19,12 @@ const publishedWork = caseStudies.filter((project) => !project.draft);
             ))}
           </ul>
           {project.link && (
-            <a href={project.link.href} target="_blank" rel="noopener noreferrer">
+            <a href={project.link.href} target="_blank" rel="noopener noreferrer" class="card-link">
               {project.link.label}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17L17 7" />
+                <path d="M7 7h10v10" />
+              </svg>
             </a>
           )}
         </article>
@@ -47,10 +52,18 @@ const publishedWork = caseStudies.filter((project) => !project.draft);
   }
 
   .card {
-    background: var(--color-background);
+    background: var(--color-muted);
     border: 1px solid var(--color-border);
+    border-top: 3px solid var(--color-primary);
     border-radius: 12px;
     padding: var(--space-md);
+    transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
   }
 
   .card h3 {
@@ -75,14 +88,30 @@ const publishedWork = caseStudies.filter((project) => !project.draft);
 
   .stack-tags li {
     font-size: 0.75rem;
-    background: var(--color-muted);
+    background: var(--color-background);
     color: var(--color-muted-foreground);
+    border: 1px solid var(--color-border);
     padding: 0.25rem 0.5rem;
     border-radius: 4px;
+    transition: border-color 150ms ease, color 150ms ease;
   }
 
-  .card a {
+  .card:hover .stack-tags li {
+    border-color: var(--color-primary);
+    color: var(--color-foreground);
+  }
+
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
     font-size: 0.875rem;
     font-weight: 600;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card:hover {
+      transform: none;
+    }
   }
 </style>

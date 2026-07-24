@@ -11,6 +11,7 @@ const stack = [
 ---
 
 <section id="stack" class="stack container">
+  <span class="kicker">03 / STACK</span>
   <h2>Stack</h2>
   <ul class="stack-list">
     {stack.map((item) => <li class="mono">{item}</li>)}
@@ -43,5 +44,18 @@ const stack = [
     border: 1px solid var(--color-border);
     padding: 0.375rem 0.75rem;
     border-radius: 6px;
+    transition: border-color 150ms ease, background 150ms ease, transform 150ms ease;
+  }
+
+  .stack-list li:hover {
+    border-color: var(--color-primary);
+    background: var(--color-muted);
+    transform: translateY(-1px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .stack-list li:hover {
+      transform: none;
+    }
   }
 </style>
