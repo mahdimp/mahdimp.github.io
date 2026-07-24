@@ -3,7 +3,7 @@ export interface CaseStudy {
   title: string;
   summary: string;
   stack: string[];
-  link?: { href: string; label: string };
+  links?: { href: string; label: string }[];
   /** When true, SelectedWork.astro excludes this card from the rendered page — actual gate, not just a note. */
   draft?: boolean;
   /** Internal note only — never rendered. Context for why a card is (or isn't) a draft, or other follow-ups. */
@@ -41,7 +41,10 @@ export const caseStudies: CaseStudy[] = [
     summary:
       'A frictionless flashcard app that runs entirely client-side — no backend, no account. Uses the FSRS scheduling algorithm (the same one Anki now defaults to), IndexedDB for storage, and works offline as an installable PWA.',
     stack: ['Angular', 'Dexie/IndexedDB', 'Tailwind CSS'],
-    link: { href: 'https://github.com/mahdimp/deckle', label: 'Repository' },
-    note: 'TODO — repo is still private; once made public and the Pages workflow deploys, switch this link to the live app at mahdimp.github.io/deckle/.',
+    links: [
+      { href: 'https://mahdimp.github.io/deckle/', label: 'Live app' },
+      { href: 'https://github.com/mahdimp/deckle', label: 'Repository' },
+    ],
+    note: 'Deployed 2026-07-24 — repo is public and Pages build succeeded, live app link added.',
   },
 ];
