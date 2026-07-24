@@ -1,0 +1,86 @@
+---
+import { caseStudies } from '../data/work';
+---
+
+<section id="work" class="work container">
+  <h2>Selected work</h2>
+  <div class="grid">
+    {
+      caseStudies.map((project) => (
+        <article class="card">
+          <h3>{project.title}</h3>
+          <p>{project.summary}</p>
+          <ul class="stack-tags">
+            {project.stack.map((item) => (
+              <li class="mono">{item}</li>
+            ))}
+          </ul>
+          {project.link && (
+            <a href={project.link.href} target="_blank" rel="noopener noreferrer">
+              {project.link.label}
+            </a>
+          )}
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .work {
+    padding-block: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 var(--space-lg);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .card {
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: var(--space-md);
+  }
+
+  .card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin: 0 0 var(--space-sm);
+  }
+
+  .card p {
+    color: var(--color-muted-foreground);
+    margin: 0 0 var(--space-md);
+  }
+
+  .stack-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding: 0;
+    margin: 0 0 var(--space-md);
+  }
+
+  .stack-tags li {
+    font-size: 0.75rem;
+    background: var(--color-muted);
+    color: var(--color-muted-foreground);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+  }
+
+  .card a {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+</style>
