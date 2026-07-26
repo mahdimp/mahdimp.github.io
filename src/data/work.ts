@@ -47,4 +47,16 @@ export const caseStudies: CaseStudy[] = [
     ],
     note: 'Deployed 2026-07-24 — repo is public and Pages build succeeded, live app link added.',
   },
+  {
+    slug: 'pendler',
+    title: 'Pendler — VVS/SSB station board & trip search',
+    summary:
+      'A client-only PWA for Stuttgart public transport: live departure boards and trip search, calling VVS’s own public API directly from the browser with no backend or account. Includes an in-app translation feature for German-only disruption notices.',
+    stack: ['Angular', 'PWA'],
+    links: [
+      { href: 'https://mahdimp.github.io/pendler/', label: 'Live app' },
+      { href: 'https://github.com/mahdimp/pendler', label: 'Repository' },
+    ],
+    note: 'Deploy workflow pushed 2026-07-26 — pending one manual step (Settings → Pages → Source = GitHub Actions) before the live link resolves; same prerequisite deckle needed.',
+  },
 ];
