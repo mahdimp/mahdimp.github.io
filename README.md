@@ -22,12 +22,7 @@ src/
 design-system/  persisted design tokens (colors, typography, spacing)
 ```
 
-## Deployment
 
-Pushing to `master` triggers `.github/workflows/deploy.yml`. One-time setup: in the repo's
-Settings → Pages, set **Build and deployment → Source** to **GitHub Actions**.
-
-## Known TODOs
 
 - `public/cv.pdf` needs to be added (Hero download button links to it).
 - `public/og-image.png` referenced in the layout but not yet created.
