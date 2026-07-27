@@ -28,4 +28,3 @@ design-system/  persisted design tokens (colors, typography, spacing)
 - `public/og-image.png` referenced in the layout but not yet created.
 - straiv and Dubai Police FMS/IMS case studies in `src/data/work.ts` are drafts pending sign-off before publishing (see `status` field on each entry).
 - Nx migration case study is a placeholder — needs real specifics.
-- `deckle` repo is still private; once public and deployed, update its link in `work.ts`.
